@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test FastAPI</title>
+    <style>
+        body {
+       background-color: #d4f2ff;
+      }
+      h1 {
+        color: #32a1ce;
+        display: flex;
+        justify-content: center;
+      }
+      h2 {
+        display: flex;
+        justify-content: center;
+      }
+      .parent {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        overflow: auto;
+      }
+      .block {
+        background: white;
+        border: thick double #32a1ce;
+        padding: 0.2rem;
+        img {
+            display: block;
+            border: 4mm ridge rgba(211, 220, 50, .6);
+        }
+      }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="block">
+            <h1>Your salary:</h1>
+            <h2>{{ user.salary }} $</h2>
+            <h1>Salary increase date:</h1>
+            <h2>{{ user.date }}</h2><br>
+            <a href="/">Home</a> | <a href="/auth/login">Login</a> | <a href="/auth/logout">Logout
+        </a>
+        </div>
+    </div>
+</body>
+</html>

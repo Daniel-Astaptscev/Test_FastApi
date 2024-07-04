@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test FastAPI</title>
+    <style>
+        body {
+       background-color: #d4f2ff;
+      }
+      p {
+        color: red;
+        display: flex;
+        justify-content: center;
+      }
+      h1 {
+        color: #32a1ce;
+        display: flex;
+        justify-content: center;
+      }
+      .parent {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        overflow: auto;
+      }
+      .block {
+        background: white;
+        border: thick double #32a1ce;
+        padding: 0.2rem;
+        img {
+            display: block;
+            border: 4mm ridge rgba(211, 220, 50, .6);
+        }
+      }
+      input {
+        text-align: center;
+        padding: 10px;
+        margin-bottom: 10px;
+        width: 20%;
+        height: 20px;
+        border: 1px solid #32a1ce;
+        width: 250px;
+      }
+
+      #btn {
+        width: 20%;
+        font-size: 14pt;
+        color: white;
+        background: #43b2e0;
+        height: 40px;
+        padding: 10px;
+        border: 1px solid #32a1ce;
+        width: 271px;
+      }
+      #btn:hover {
+        color: white;
+        background: #4bc2f5;
+      }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="block">
+            <h1>Login page</h1>
+            <form action="/auth/login" method="post">
+                <input type="email" name="username" value="{{ username }}"
+                       placeholder="Login" required><br>
+                <input type="password" name="password"
+                       value="{{ password }}" placeholder="Password" required><br>
+                <input id="btn" type="submit" value="Sign in"><br><br>
+            </form>
+            {% for error in errors %}
+                <p>{{ error }}</p>
+            {% endfor %}
+            <a href="/">Home</a> | <a href="/auth/logout">Logout</a>
+        </div>
+    </div>
+</body>
+</html>
